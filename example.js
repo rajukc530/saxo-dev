@@ -5,7 +5,7 @@
 */
 // https://sim.logonvalidation.net/authorize?client_id= + 7cb253c757354704a83762627dc885a6 + &response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%2F
 // Change the configuration so all 5 constants contain your data:
-const userId = "17695457";  // This is the user who has created the certificate (in Chrome!)
+const userId = "17695456";  // This is the user who has created the certificate (in Chrome!)
 const appKey = "7cb253c757354704a83762627dc885a6";  // Enter the appKey of the app which is entitled to authenticate via a certificate
 const appSecret = "d83a57f9ff3c481185176eaaae596c8c";  // Enter your app secret
 const serviceProviderUrl = "koizai-qa_C76B25B9-5D99-451F-8144-9D45690DEF8D";  // This is the unique identifier of the app, not per se a URL
@@ -44,7 +44,7 @@ function createJwtAssertion() {
         },
         "algorithm": "RS256",  // Algorithm used to sign JWT. We only support RS256 at the moment.
         "issuer": appKey,  // Value should be AppKey of client application.
-        "expiresIn": "1 days",  // Lifetime of assertion - keep this short, the token is generated directly afterwards.
+        "expiresIn": 1685577599,  // Lifetime of assertion - keep this short, the token is generated directly afterwards.
         "subject": userId,  // UserId - Value should be the user id for which token is needed.
         "audience": authProviderUrl  // Audience - Value should be the AuthenticationUrl.
     };
