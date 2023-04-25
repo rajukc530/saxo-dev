@@ -11,7 +11,7 @@ const appSecret = "d83a57f9ff3c481185176eaaae596c8c";  // Enter your app secret
 const serviceProviderUrl = "koizai-qa_C76B25B9-5D99-451F-8144-9D45690DEF8D";  // This is the unique identifier of the app, not per se a URL
 // The certificate thumbprint (aka fingerprint) can be found in the "Manage Computer Certificates" app, under Personal/Certificates/Saxo Bank Client Certificate: details
 //  (after installing the p12 certificate, which is not required for this example).
-const certThumbPrint = "1DAE47C5B2252C6BE6A78694C1FD820A50F3BA2F";
+const certThumbPrint = "8F8A2DC458593365C72B6931DFE31882633E1266";
 
 const authProviderUrl = "https://sim.logonvalidation.net/token";  // On production, this will be "https://live.logonvalidation.net/token"
 const apiUrl = "https://gateway.saxobank.com/sim/openapi";  // On production, this is "https://gateway.saxobank.com/openapi"
@@ -44,7 +44,7 @@ function createJwtAssertion() {
         },
         "algorithm": "RS256",  // Algorithm used to sign JWT. We only support RS256 at the moment.
         "issuer": appKey,  // Value should be AppKey of client application.
-        "expiresIn": 1685577599,  // Lifetime of assertion - keep this short, the token is generated directly afterwards.
+        "expiresIn": 120000,  // Lifetime of assertion - keep this short, the token is generated directly afterwards.
         "subject": userId,  // UserId - Value should be the user id for which token is needed.
         "audience": authProviderUrl  // Audience - Value should be the AuthenticationUrl.
     };
